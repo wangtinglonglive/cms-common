@@ -192,7 +192,7 @@ public class StringUtils {
 		
 		//再将\n结尾的这行文本用<p></p>标签包起来。 张三\n李四      <p>张三</p><p>李四</p>
 		dst=dst.replaceAll("\n", "</p><p>");
-		dst="<p>" + dst + "</p>";
+		dst="<p>" + dst + "</p>";          
 		//如果遇到单个\r字符要使用<br/>标签替换。
 		dst=dst.replaceAll("\r", "<br/>");
 		return dst;

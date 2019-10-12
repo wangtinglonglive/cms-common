@@ -23,7 +23,7 @@ public static void main(String[] args) {
 	
 	
 	/**
-	 * 
+	 * 根据出生的年月日获取年龄
 	 * @param birthday
 	 * @return
 	 */
