@@ -6,24 +6,23 @@ import java.util.Date;
 
 public class DateUtils {
 
-	
 public static void main(String[] args) {
 		
 		Date birth = new Date(100, 0, 6);
 		int age = calAge(birth);
 		System.out.println("age is " + age);
 		
-		System.out.println("½ñÌìµÄÔÂ³õÊÇ " + getMonthStart(new Date()));
+		System.out.println("ä»Šå¤©çš„æœˆåˆæ˜¯ " + getMonthStart(new Date()));
 		
 		
-		System.out.println("½ñÌìµÄÔÂÄ©ÊÇ " + getMonthEnd(new Date(119, 1, 23)));
+		System.out.println("ä»Šå¤©çš„æœˆæœ«æ˜¯ " + getMonthEnd(new Date(119, 1, 23)));
 		
 		
 	}
 	
 	
 	/**
-	 * ¸ù¾İ³öÉúµÄÄêÔÂÈÕ»ñÈ¡ÄêÁä
+	 * 
 	 * @param birthday
 	 * @return
 	 */
@@ -31,12 +30,12 @@ public static void main(String[] args) {
 		 
 		Calendar cal = Calendar.getInstance();  
 		cal.setTime(birthday);
-		//»ñÈ¡³öÉúµÄÄêÔÂÈÕ
+		//è·å–å‡ºç”Ÿçš„å¹´æœˆæ—¥
 		int birthYear = cal.get(Calendar.YEAR);
 		int birthMonth = cal.get(Calendar.MONTH);
 		int birthDate = cal.get(Calendar.DAY_OF_MONTH);
 		
-		// »ñÈ¡½ñÌìµÄÄêÔÂÈÕ
+		// è·å–ä»Šå¤©çš„å¹´æœˆæ—¥
 		cal.setTime(new Date());
 		int currentYear = cal.get(Calendar.YEAR);
 		int currentMonth = cal.get(Calendar.MONTH);
@@ -53,7 +52,7 @@ public static void main(String[] args) {
 	}
 	
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÎªµ±Ìì
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºå½“å¤©
 	 * @param date
 	 * @return
 	 */
@@ -68,7 +67,7 @@ public static void main(String[] args) {
 	
 	
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÎª½ñÄê
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºä»Šå¹´
 	 * @param date
 	 * @return
 	 */
@@ -83,15 +82,15 @@ public static void main(String[] args) {
 	
 	/** 
 	 *  
-	 * ¸ø¶¨Ê±¼ä¶ÔÏó£¬³õÊ¼»¯µ½¸ÃÔÂ³õµÄ1ÈÕ0Ê±0·Ö0Ãë0ºÁÃë
-	 * ÀıÈç  ¸ø¶¨ 2017-08-23 13:24:16  ·µ»Ø 2017-08-01 00:00:00 
+	 * ç»™å®šæ—¶é—´å¯¹è±¡ï¼Œåˆå§‹åŒ–åˆ°è¯¥æœˆåˆçš„1æ—¥0æ—¶0åˆ†0ç§’0æ¯«ç§’
+	 * ä¾‹å¦‚  ç»™å®š 2017-08-23 13:24:16  è¿”å› 2017-08-01 00:00:00 
 	 * @return
 	 */
 	public static Date getMonthStart(Date date) {
 		
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-		//ÉèÖÃ0Ãë
+		//è®¾ç½®0ç§’
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MINUTE, 0);
 		cal.set(Calendar.HOUR, 0);
@@ -101,7 +100,7 @@ public static void main(String[] args) {
 	}
 	
 	/**
-	 * ÇóÔÂÄ©
+	 * æ±‚æœˆæœ«
 	 * @param date
 	 * @return
 	 */
@@ -109,7 +108,7 @@ public static void main(String[] args) {
 		
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-		//ÉèÖÃ0Ãë
+		//è®¾ç½®0ç§’
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MINUTE, 0);
 		cal.set(Calendar.HOUR, 0);
@@ -119,5 +118,6 @@ public static void main(String[] args) {
 		cal.add(Calendar.SECOND, -1);
 		return cal.getTime();
 	}
+
 
 }

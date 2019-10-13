@@ -6,7 +6,7 @@ import java.io.IOException;
 public class StreamUtils {
 
 	/**
-	 *  ¹Ø±ÕËùÓĞµÄÁ÷
+	 *  å…³é—­æ‰€æœ‰çš„æµ
 	 * @param n
 	 * @param streams
 	 * @throws IOException
@@ -18,5 +18,6 @@ public class StreamUtils {
 		}
 		
 	}
+
 
 }
