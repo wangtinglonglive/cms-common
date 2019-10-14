@@ -136,11 +136,11 @@ public class StringUtils {
 	}
 	
 	/**
-	 * 判断是否为数字
+	 * 判断是否为数字（不包含小数）
 	 * @param str
 	 * @return
 	 */
-	public static boolean isNumber(String str) {
+	public static boolean isNumberandxaio(String str) {
 		
 		String reg = "[0-9]+";
 		return str.matches(reg);
@@ -149,11 +149,11 @@ public class StringUtils {
 	
 	
 	/**
-	 * 判断是否为数字（包含小数）
+	 * 判断是否为数字
 	 * @param str
 	 * @return
 	 */
-	public static boolean isNumberandxaio(String str) {
+	public static boolean isNumber(String str) {
 		
 		String reg = "([1-9]+[0-9]*|0)(\\.[\\d]+)?";
 		return str.matches(reg);

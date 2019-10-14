@@ -118,7 +118,7 @@ public class FileUtils {
 		List<String> strList = new ArrayList();
 		File file = new File(fileName);
 		FileInputStream fis = new FileInputStream(file);
-		InputStreamReader reader = new InputStreamReader(fis);
+		InputStreamReader reader = new InputStreamReader(fis,"utf-8");
 		BufferedReader  bufferedReader = new BufferedReader(reader);
 		String str = null;
 		while( (str=bufferedReader.readLine())!=null ) {

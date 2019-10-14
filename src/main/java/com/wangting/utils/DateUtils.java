@@ -9,7 +9,7 @@ public class DateUtils {
 public static void main(String[] args) {
 		
 		Date birth = new Date(100, 0, 6);
-		int age = calAge(birth);
+		int age = getAge(birth);
 		System.out.println("age is " + age);
 		
 		System.out.println("今天的月初是 " + getMonthStart(new Date()));
@@ -26,7 +26,7 @@ public static void main(String[] args) {
 	 * @param birthday
 	 * @return
 	 */
-	public static  int calAge(Date birthday) {
+	public static  int getAge(Date birthday) {
 		 
 		Calendar cal = Calendar.getInstance();  
 		cal.setTime(birthday);
