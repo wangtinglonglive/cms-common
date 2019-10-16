@@ -3,9 +3,10 @@
   <groupId>com.wangting</groupId>
   <artifactId>cms-common</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+   <properties>
+  	<commons-lang3.version>3.3.2</commons-lang3.version>
+  </properties>
    <dependencies>
-   
    	<dependency>
   		<groupId>commons-codec</groupId>
   		<artifactId>commons-codec</artifactId>
