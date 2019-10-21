@@ -6,19 +6,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.math.BigDecimal;
 import java.util.List;
 
 public class Week3 {
 
-	/**
-	 * ��ȡ�ļ����и�
-	 * @param args
-	 * @throws IOException
-	 */
+
 	
-	
-	public static String readTextFile(InputStream src) throws IOException {
+/*	public static String readTextFile(InputStream src) throws IOException {
 
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
@@ -34,16 +28,14 @@ public class Week3 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			StreamUtils.closeStream(outputStream, src);
+			//StreamUtils.closeStream(outputStream, src);
 		}
 
 		return null;
-	}
+	}*/
 
-	/*
-	 *��ȡ�ļ�
-	 */
-	public static String readTextFile(File txtFile) throws IOException {
+	
+/*	public static String readTextFile(File txtFile) throws IOException {
 		try {
 			FileInputStream inputStream = new FileInputStream(txtFile);
 			String readTextFile = readTextFile(inputStream);
@@ -59,24 +51,24 @@ public class Week3 {
 	
 	
 	public static void main(String[] args) throws IOException {
-//		String readFile = readTextFile(new File("D:\\������\\ʵѵһ\\����ͨ\\��ĳ_\\data.txt"));
+
 		
 			
 		
-		//���ù�����
+		
 		List<String> readFile = FileUtils.readFile("D:\\大数据\\实训一\\内网通\\段某_\\data.txt");
 		
 		for (String string : readFile) {
 			System.out.println(string);
-			// �ı��ļ������ݸ�ʽ������|16.8|ʳƷ
+			
 			String[] split = string.split("\\|");
 			
 			
 			for (int i = 0; i < split.length; i+=3) {
 				Goods goods = new Goods(0, 
-						split[i], // ��һ��������
-						Double.parseDouble(split[i+1]), //�۸� ��Ҫ��ʽת��
-						split[i+2]);// ���
+						split[i], 
+						Double.parseDouble(split[i+1]), 
+						split[i+2]);
 				System.out.println(goods);
 			}
 			
@@ -168,6 +160,6 @@ class Goods{
 	
 	
 	
-	
+	*/
 	
 }

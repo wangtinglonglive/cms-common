@@ -7,11 +7,45 @@ import java.util.regex.Pattern;
 public class StringUtils {
 
 	
+	
+
+
+
+	public static void main(String[] args) {
+		
+		
+		
+		String percentage = toPercentage(1,3);
+		System.out.println("百分比"+percentage);
+	}
+	
+	
+	/*
+	* 百分比计算方法，返回值只要整数不需要小数。
+	* 给一个当前数，和一个总数，计算当前数百分占比，例如参数为5和10，方法内部
+	* 5除以10得0.5，再乘以100，返回50，注意四舍五入。页面就可以显示50%
+	*/
+	public static String toPercentage(Integer a,Integer count) {
+		double b = (double)a/count;
+		
+		System.out.println(b);
+		b = b*100;
+		
+		System.out.println(b);
+		String format = String.format("%.0f", b);
+		System.out.println(format);
+		
+		return format;
+	}
+	
+	
+	
+	
 	/**
 	 * 
 	 */
 	public static char cs[] = new char[36] ;
-	// 初始化数组
+	
 	static {
 		int index=0;
 		for (char i = 'a'; i <='z' ; i++) {
@@ -28,43 +62,11 @@ public class StringUtils {
 	
 	
 	
-	public static void main(String[] args) {
-		/*String str = randomChar(10);
-		System.out.println("10个随机的字符是 " + str);
-		
-		
-		String s = StringUtils.randomCharAndNumber(20);
-		System.out.println("s is " + s);
-		
-		System.out.println("扩展名是："  + StringUtils.getFileSuffix("朱志广-1706E-补课计划.xlsx"));
-		
-		System.out.println(" reg 234 " + StringUtils.isNumber("234") );
-
-		System.out.println(" reg 2a34 " + StringUtils.isNumber("2a34") );
-		System.out.println(" reg kong  " + StringUtils.isNumber("") );
-		
-		
-		System.out.println(" is email  ? zhuzh@qq.com " + StringUtils.isEmail("zhuzh@qq.com"));
-		System.out.println(" is email ? zhuzg@qq.c1n  " + StringUtils.isEmail("zhuzg@qq.c1n") );
-		
-		System.out.println(" type2 is email  ? zhuzh@qq.com " + StringUtils.isEmail2("zhuzh@qq.com"));
-		System.out.println(" type2   email ? zhuzg@qq.c1n  " + StringUtils.isEmail2("zhuzg@qq.c1n") );
-		*/
-		
-//		String str = "张三\r\n李四";
-//		String dst = toHtml(str);
-//		System.out.println("dst is " + dst);
-//		
-		String str = "13.12" ;
-		boolean dst = isNumberandxaio(str);
-		System.out.println(dst);
-		
-	}
 	
 	
 	
 	/**
-	 * 判断源字符串是否为空，空引号也算没值；
+	 * 鍒ゆ柇婧愬瓧绗︿覆鏄惁涓虹┖锛岀┖寮曞彿涔熺畻娌″�硷紱
 	 * @param str
 	 * @return
 	 */
@@ -75,7 +77,7 @@ public class StringUtils {
 	}
 	
 	/**
-	 * 判断源字符串是否有值，空引号也算没值；
+	 * 鍒ゆ柇婧愬瓧绗︿覆鏄惁鏈夊�硷紝绌哄紩鍙蜂篃绠楁病鍊硷紱
 	 * @param str
 	 * @return
 	 */
@@ -102,7 +104,7 @@ public class StringUtils {
 	}
 	
 	/**
-	 * 随机生成长度为n的字符串，其中包含字母和数字
+	 * 闅忔満鐢熸垚闀垮害涓簄鐨勫瓧绗︿覆锛屽叾涓寘鍚瓧姣嶅拰鏁板瓧
 	 * @param n
 	 * @return
 	 */
@@ -119,8 +121,8 @@ public class StringUtils {
 	}
 	
 	/**
-	 * 获取一个文件名称的扩展名
-	 * 例如： mytest/mynewFile.txt return .txt
+	 * 鑾峰彇涓�涓枃浠跺悕绉扮殑鎵╁睍鍚�
+	 * 渚嬪锛� mytest/mynewFile.txt return .txt
 	 * @param fileName
 	 * @return
 	 */
@@ -136,7 +138,7 @@ public class StringUtils {
 	}
 	
 	/**
-	 * 判断是否为数字（不包含小数）
+	 * 鍒ゆ柇鏄惁涓烘暟瀛楋紙涓嶅寘鍚皬鏁帮級
 	 * @param str
 	 * @return
 	 */
@@ -149,7 +151,7 @@ public class StringUtils {
 	
 	
 	/**
-	 * 判断是否为数字
+	 * 鍒ゆ柇鏄惁涓烘暟瀛�
 	 * @param str
 	 * @return
 	 */
@@ -159,7 +161,7 @@ public class StringUtils {
 		return str.matches(reg);
 	}
 	/**
-	 * 验证代码
+	 * 楠岃瘉浠ｇ爜
 	 * @param str
 	 * @return
 	 */
@@ -179,7 +181,7 @@ public class StringUtils {
 	}
 	
 	/**
-	 * 校验一个字符串是否为正确的电话号码
+	 * 鏍￠獙涓�涓瓧绗︿覆鏄惁涓烘纭殑鐢佃瘽鍙风爜
 	 * @param mobile
 	 * @return
 	 */
@@ -193,21 +195,21 @@ public class StringUtils {
 	}
 	
 	/**
-	 * (1)利用Html的<p>标签来保留文本的换行。
-(2)Windows系统换行符是“\r\n”,Linux系统是“\n”，因此要将\n\r替换成一个\n。
-(3)再将\n结尾的这行文本用<p></p>标签包起来。 张三\n李四      <p>张三</p><p>李四</p>
-(4)如果遇到单个\r字符要使用<br/>标签替换。
+	 * (1)鍒╃敤Html鐨�<p>鏍囩鏉ヤ繚鐣欐枃鏈殑鎹㈣銆�
+(2)Windows绯荤粺鎹㈣绗︽槸鈥淺r\n鈥�,Linux绯荤粺鏄�淺n鈥濓紝鍥犳瑕佸皢\n\r鏇挎崲鎴愪竴涓猏n銆�
+(3)鍐嶅皢\n缁撳熬鐨勮繖琛屾枃鏈敤<p></p>鏍囩鍖呰捣鏉ャ�� 寮犱笁\n鏉庡洓      <p>寮犱笁</p><p>鏉庡洓</p>
+(4)濡傛灉閬囧埌鍗曚釜\r瀛楃瑕佷娇鐢�<br/>鏍囩鏇挎崲銆�
 	 * @param src
 	 * @return
 	 */
 	public static String toHtml(String src) {
-		//Windows系统换行符是“\r\n”,Linux系统是“\n”，因此要将\n\r替换成一个\n。
+		//Windows绯荤粺鎹㈣绗︽槸鈥淺r\n鈥�,Linux绯荤粺鏄�淺n鈥濓紝鍥犳瑕佸皢\n\r鏇挎崲鎴愪竴涓猏n銆�
 		String dst = src.replaceAll("\r\n", "\n");
 		
-		//再将\n结尾的这行文本用<p></p>标签包起来。 张三\n李四      <p>张三</p><p>李四</p>
+		//鍐嶅皢\n缁撳熬鐨勮繖琛屾枃鏈敤<p></p>鏍囩鍖呰捣鏉ャ�� 寮犱笁\n鏉庡洓      <p>寮犱笁</p><p>鏉庡洓</p>
 		dst=dst.replaceAll("\n", "</p><p>");
 		dst="<p>" + dst + "</p>";
-		//如果遇到单个\r字符要使用<br/>标签替换。
+		//濡傛灉閬囧埌鍗曚釜\r瀛楃瑕佷娇鐢�<br/>鏍囩鏇挎崲銆�
 		dst=dst.replaceAll("\r", "<br/>");
 		return dst;
 	}
